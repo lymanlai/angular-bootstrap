@@ -231,7 +231,7 @@ dialogModule.provider("$dialog", function(){
       if (this.options.template) {
         templatePromise = $q.when(this.options.template);
       } else if (this.options.templateUrl) {
-        templatePromise = $http.get(this.options.templateUrl, {cache:$templateCache})
+        templatePromise = $http.get(this.options.templateUrl})
         .then(function(response) { return response.data; });
       }
 
