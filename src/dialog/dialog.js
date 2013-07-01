@@ -217,8 +217,9 @@ dialogModule.provider("$dialog", function(){
 
       if(this.options.backdrop) { 
         activeBackdrops.value--;
-        if (activeBackdrops.value === 0) {
+        if (activeBackdrops.value <= 0) {
           this.backdropEl.remove(); 
+          activeBackdrops.value = 0;
         }
       }
       this._open = false;
